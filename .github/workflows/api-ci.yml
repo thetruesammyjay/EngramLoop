@@ -1,0 +1,25 @@
+name: API CI
+
+on:
+  push:
+    paths: ["apps/api/**", ".github/workflows/api-ci.yml"]
+  pull_request:
+    paths: ["apps/api/**", ".github/workflows/api-ci.yml"]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: apps/api/uv.lock
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: uv sync --locked --project apps/api
+      - run: uv run --project apps/api ruff check apps/api/src
+      - run: uv run --project apps/api mypy --config-file apps/api/pyproject.toml apps/api/src
+      - if: ${{ hashFiles('apps/api/tests/**/*.py') != '' }}
+        run: uv run --project apps/api pytest apps/api/tests

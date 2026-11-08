@@ -1,0 +1,2 @@
+"""User-scoped persistence operations."""
+

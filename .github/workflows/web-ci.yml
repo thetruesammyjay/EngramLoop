@@ -1,0 +1,26 @@
+name: Web CI
+
+on:
+  push:
+    paths: ["apps/web/**", "package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", ".github/workflows/web-ci.yml"]
+  pull_request:
+    paths: ["apps/web/**", "package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", ".github/workflows/web-ci.yml"]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --dir apps/web lint
+      - run: pnpm --dir apps/web typecheck
+      - run: pnpm --dir apps/web build
+      - if: ${{ hashFiles('apps/web/**/*.spec.ts', 'apps/web/**/*.spec.tsx', 'apps/web/**/*.test.ts', 'apps/web/**/*.test.tsx') != '' }}
+        run: pnpm --dir apps/web exec playwright install --with-deps chromium
+      - if: ${{ hashFiles('apps/web/**/*.spec.ts', 'apps/web/**/*.spec.tsx', 'apps/web/**/*.test.ts', 'apps/web/**/*.test.tsx') != '' }}
+        run: pnpm --dir apps/web exec playwright test
