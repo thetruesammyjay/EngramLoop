@@ -1,0 +1,536 @@
+.engram-demo {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.el-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.el .ss-stage {
+  overflow: hidden;
+}
+
+.el-window {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 660px;
+  height: 494px;
+  overflow: hidden;
+  box-shadow: var(--ss-shadow-hero);
+}
+
+.el-window[data-kind="sidebar"] .ss-window__side {
+  background: #f7f8ff;
+}
+
+.el-sidebar {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 11px 12px;
+  color: #676d88;
+  font-size: 11px;
+}
+
+.el-workspace-name {
+  display: flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 1px 0 19px;
+}
+
+.el-logo {
+  display: block;
+  width: 130px;
+  height: auto;
+}
+
+.el-sidebar-label {
+  padding: 0 7px 7px;
+  color: #999eb2;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.el-sidebar-label--recent {
+  margin-top: 22px;
+}
+
+.el-sidebar-item {
+  display: flex;
+  min-height: 31px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  border-radius: 7px;
+  color: #646a85;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.el-sidebar-item--active {
+  background: #eceeff;
+  color: #4943ca;
+  font-weight: 650;
+}
+
+.el-sidebar-count {
+  margin-left: auto;
+  color: #959ab0;
+  font-size: 9px;
+}
+
+.el-sidebar-item--recent {
+  min-height: 28px;
+  gap: 7px;
+  color: #858aa1;
+  font-size: 10px;
+}
+
+.el-sidebar-bottom {
+  margin-top: auto;
+  padding-bottom: 100px;
+}
+
+.el-profile {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 4px 0;
+  border-top: 1px solid #e7e9f1;
+  will-change: transform;
+}
+
+.el-profile > span {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 9px;
+  background: #e8e9ff;
+  color: #514bc5;
+  font-size: 9px;
+  font-weight: 700;
+  will-change: transform;
+}
+
+.el-profile > svg { flex: none; margin-left: auto; color: #9a9fb2; }
+
+.el-profile b,
+.el-profile small {
+  display: block;
+}
+
+.el-profile b {
+  color: #424762;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.el-profile small {
+  margin-top: 2px;
+  color: #9a9fb2;
+  font-size: 8px;
+}
+
+.el-window-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b718a;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.el-window-status > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #20bda9;
+  box-shadow: 0 0 0 3px #e6f7f4;
+}
+
+.el-window-body {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.el-chat {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: 20px;
+  background: #fff;
+}
+
+.el-chat-heading {
+  display: flex;
+  min-height: 28px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.el-chat-heading > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.el-chat-heading strong {
+  color: #282c49;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.el-chat-heading > div > span {
+  color: #a0a4b5;
+  font-size: 9px;
+}
+
+.el-icon-button {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border: 1px solid #e8eaf2;
+  border-radius: 8px;
+  color: #777d96;
+}
+
+.el-thread {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 3px 0 8px;
+  overflow: hidden;
+}
+
+.el-question {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.el-question > span {
+  max-width: 86%;
+  padding: 8px 12px;
+  border-radius: 13px 13px 4px 13px;
+  background: #4d45ed;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.el-thinking {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  color: #747a94;
+  font-size: 10px;
+}
+
+.el-thinking-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #18aeb7;
+  box-shadow: 0 0 0 3px #e8f8f9;
+}
+
+.el-response {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  align-items: start;
+  gap: 9px;
+}
+
+.el-response-avatar {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 1px solid #e1e3ff;
+  border-radius: 8px;
+  background: #f1f1ff;
+  color: #514be0;
+}
+
+.el-response-avatar .engram-mascot {
+  width: 31px;
+  height: 31px;
+}
+
+.el-response-content {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+}
+
+.el-response-author {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #969bb0;
+  font-size: 10px;
+}
+
+.el-response-author strong {
+  color: #353a58;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.el-answer {
+  margin: 0;
+  color: #424760;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.el-code {
+  padding: 7px 0;
+  overflow: hidden;
+  border: 1px solid #e9ebf3;
+  border-radius: 9px;
+  background: #f8f9fc;
+  will-change: transform;
+}
+
+.el-memory-card {
+  background: #fbfcff !important;
+  box-shadow: inset 0 0 0 1px #e5e7fb !important;
+}
+
+.el-memory-card-top {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+}
+
+.el-memory-icon {
+  display: grid;
+  width: 19px;
+  height: 19px;
+  flex: none;
+  place-items: center;
+  border-radius: 6px;
+  background: #eff1ff;
+  color: #514be0;
+}
+
+.el-memory-label {
+  color: #858aa2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.el-memory-badge {
+  margin-left: auto;
+}
+
+.el-memory-card > p {
+  margin: 0;
+  color: #3a405d;
+  font-size: 10px;
+  font-weight: 620;
+  line-height: 1.4;
+}
+
+.el-memory-origin {
+  color: #9a9fb0;
+  font-size: 10px;
+}
+
+.el-composer {
+  min-width: 0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #e4e7f0;
+}
+
+.el-composer .ss-field__box {
+  min-height: 36px;
+  padding: 0 9px 0 12px;
+  border-radius: 10px;
+}
+
+.el-composer .ss-field__placeholder,
+.el-composer .ss-field__value {
+  color: #878ca2;
+  font-size: 10px;
+}
+
+.el-send-icon {
+  display: grid;
+  width: 23px;
+  height: 23px;
+  place-items: center;
+  border-radius: 7px;
+  background: #4d45ed;
+  color: #fff;
+}
+
+.el-replay {
+  cursor: pointer;
+  outline: none;
+}
+
+.el-replay:focus-visible {
+  outline: 2px solid #4d45ed;
+  outline-offset: 3px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone-body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-chat--phone {
+  box-sizing: border-box;
+  flex: 1;
+  height: auto;
+  min-height: 0;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: 16px;
+  font-family: var(--ss-font);
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-chat-heading {
+  min-height: 39px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-chat-heading strong {
+  font-size: 14px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-chat-heading > div > span,
+.el .ss-stage[data-layout="compact"] .el-phone .el-phone-memory {
+  font-size: 13px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone-memory {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 5px;
+  color: #56617b;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone-memory > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #20bda9;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-thread {
+  gap: 10px;
+  padding: 8px 0 12px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-thinking {
+  font-size: 14px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-question > span {
+  max-width: 90%;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-response {
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 9px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-response-avatar {
+  width: 27px;
+  height: 27px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-response-avatar .engram-mascot {
+  width: 31px;
+  height: 31px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-response-author,
+.el .ss-stage[data-layout="compact"] .el-phone .el-memory-origin {
+  font-size: 13px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-response-author strong {
+  font-size: 14px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-answer {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-code.ss-code {
+  padding-block: 6px;
+  font-size: 13.2px;
+  line-height: 18px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-code .ss-code__num {
+  display: none;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-code .ss-code__mark {
+  width: 8px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-memory-label,
+.el .ss-stage[data-layout="compact"] .el-phone .el-memory-card > p {
+  font-size: 13px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-memory-badge {
+  font-size: 13px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-composer .ss-field__box {
+  min-height: 43px;
+  padding-inline: 12px;
+}
+
+.el .ss-stage[data-layout="compact"] .el-phone .el-composer .ss-field__placeholder,
+.el .ss-stage[data-layout="compact"] .el-phone .el-composer .ss-field__value {
+  font-size: 13px;
+}
+

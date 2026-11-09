@@ -1,0 +1,33 @@
+{
+  "status": "inconclusive",
+  "mode": "motion",
+  "stages": [
+    {
+      "key": "stage-1",
+      "label": "ss-fit el",
+      "coverage": {
+        "status": "inconclusive",
+        "frames": 635,
+        "durationMs": 25297.300000000745,
+        "medianMs": 29.5,
+        "maxGapMs": 581.6000000014901,
+        "skippedGaps": 89,
+        "cameraFrames": 0,
+        "reasons": [
+          "89 sampling gap(s) exceeded 47ms; motion during those gaps was not judged"
+        ],
+        "framingSamples": 24,
+        "layout": {
+          "controls": 0,
+          "paddedContainers": 3,
+          "compositionCrops": 0
+        }
+      },
+      "findings": [],
+      "manual": []
+    }
+  ],
+  "errors": [],
+  "manualReviewRequired": true,
+  "exitCode": 2
+}

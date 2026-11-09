@@ -1,0 +1,41 @@
+{
+  "status": "inconclusive",
+  "mode": "motion",
+  "stages": [
+    {
+      "key": "stage-1",
+      "label": "ss-fit el",
+      "coverage": {
+        "status": "inconclusive",
+        "frames": 400,
+        "durationMs": 16506.39999999851,
+        "medianMs": 31.299999997019768,
+        "maxGapMs": 581.7999999970198,
+        "skippedGaps": 66,
+        "cameraFrames": 0,
+        "reasons": [
+          "66 sampling gap(s) exceeded 50ms; motion during those gaps was not judged"
+        ],
+        "framingSamples": 8,
+        "layout": {
+          "controls": 0,
+          "paddedContainers": 3,
+          "compositionCrops": 0
+        }
+      },
+      "findings": [
+        "settle snap: span.ss-stream__w came to rest after moving, then shifted 0.6px with no transition running, so it hops after the motion has ended; land it exactly where it stays (measure the element, mind borders and rounding) or carry the last part in the transition",
+        "settle snap: div.ss-code__line came to rest after moving, then shifted 0.6px with no transition running, so it hops after the motion has ended; land it exactly where it stays (measure the element, mind borders and rounding) or carry the last part in the transition",
+        "settle snap: span.ss-code__mark came to rest after moving, then shifted 0.6px with no transition running, so it hops after the motion has ended; land it exactly where it stays (measure the element, mind borders and rounding) or carry the last part in the transition",
+        "settle snap: span.ss-code__text came to rest after moving, then shifted 0.6px with no transition running, so it hops after the motion has ended; land it exactly where it stays (measure the element, mind borders and rounding) or carry the last part in the transition",
+        "settle snap: span.ss-code__fn came to rest after moving, then shifted 0.6px with no transition running, so it hops after the motion has ended; land it exactly where it stays (measure the element, mind borders and rounding) or carry the last part in the transition",
+        "settle snap: span.ss-code__str came to rest after moving, then shifted 0.6px with no transition running, so it hops after the motion has ended; land it exactly where it stays (measure the element, mind borders and rounding) or carry the last part in the transition",
+        "settle snap: span.ss-code__key came to rest after moving, then shifted 0.6px with no transition running, so it hops after the motion has ended; land it exactly where it stays (measure the element, mind borders and rounding) or carry the last part in the transition"
+      ],
+      "manual": []
+    }
+  ],
+  "errors": [],
+  "manualReviewRequired": true,
+  "exitCode": 2
+}

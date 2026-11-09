@@ -6,6 +6,7 @@ import type { FormEvent } from "react";
 import { useAuthToken } from "@/app/auth-boundary";
 import { useChatStream } from "@/hooks/use-chat-stream";
 import type { Memory } from "@/lib/types";
+import { EngramMascot } from "@/components/engram-mascot";
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
@@ -81,7 +82,7 @@ export function ChatWorkspace() {
         <div className="transcript">
           {(auth.signedIn && !conversationId ? [] : messages).map((message, index) => (
             <article className={`message-row ${message.role}`} key={`${message.role}-${index}`}>
-              <div className={`avatar ${message.role === "assistant" ? "assistant-avatar" : "user-avatar"}`}>{message.role === "assistant" ? <span>∞</span> : "S"}</div>
+              <div className={`avatar ${message.role === "assistant" ? "assistant-avatar" : "user-avatar"}`}>{message.role === "assistant" ? <EngramMascot size={25} /> : "S"}</div>
               <div className="message-body">
                 <div className="message-author">{message.role === "assistant" ? "EngramLoop" : "You"}</div>
                 <p>{message.content || <span className="typing-caret" aria-label="Generating response" />}</p>
